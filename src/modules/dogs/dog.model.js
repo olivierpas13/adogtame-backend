@@ -62,17 +62,17 @@ const dogSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    special_needs: {
-      type: String,
+    specialNeeds: {
+      type: [String],
     },
     characteristics: {
       type: [String],
     },
-    adoptant_id: {
+    adoptantId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    shelter_id: {
+    shelterId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Shelter",
     },
