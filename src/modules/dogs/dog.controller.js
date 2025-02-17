@@ -23,6 +23,7 @@ class DogController {
 
     async getDogById(req, res) {
         try {
+
             const dog = await dogService.getDogById(req.params.id);
             if (!dog) {
                 return res.status(404).json({ message: 'Dog not found' });
@@ -35,7 +36,6 @@ class DogController {
 
     async createDog(req, res) {
         try {
-            console.log(req.body);
             const newDog = await dogService.addDog(req.body);
             res.status(201).json(newDog);
         } catch (error) {

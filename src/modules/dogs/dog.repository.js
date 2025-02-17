@@ -1,3 +1,7 @@
+const mongoose = require("mongoose");
+const mongodb = require("mongodb");
+
+const User = require("../users/user.model.js");
 const Dog = require("./dog.model.js");
 
 class DogRepository {
@@ -29,10 +33,26 @@ class DogRepository {
 
   async create(dog) {
     try {
-      console.log({dog});
       const newDog = new Dog(dog);
-      console.log(newDog);
       const savedDog = await newDog.save();
+
+      const userId = new mongodb.ObjectId(`${dog.owner.userId}`);
+
+      console.log(await User.findById(userId));
+
+      await User.findOneAndUpdate(
+        { _id: userId },
+        {
+          $push: {
+            dogs: {
+              dogId: savedDog._id, // Now using the saved dog's ID
+              name: savedDog.name,
+              pfp: savedDog.pfp,
+            },
+          },
+        },
+        { new: true }
+      );
       return savedDog;
     } catch (error) {
       throw new Error("Error creating dog: " + error.message);

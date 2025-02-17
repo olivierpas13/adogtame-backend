@@ -10,7 +10,7 @@ class DogService {
   }
 
   async getDogById(id) {
-    return await dogRepository.findById(id);
+    return await dogRepository.getDogById(id);
   }
 
   async addDog(dog) {
