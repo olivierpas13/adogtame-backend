@@ -21,7 +21,7 @@ class DogService {
   async updateDog(id, updatedDog) {
     const existingDog = await dogRepository.findById(id);
     if (existingDog) {
-      return await dogRepository.update(id, updatedDog);
+      return await dogRepository.updateDog(id, updatedDog);
     }
     return null;
   }

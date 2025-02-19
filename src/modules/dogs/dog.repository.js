@@ -61,7 +61,7 @@ class DogRepository {
 
   async updateDog(id, dog) {
     try {
-      const updatedDog = await Dog.findByIdAndUpdate(id, dog, { new: true });
+      const updatedDog = await Dog.findByIdAndUpdate(new mongodb.ObjectId(`${id}`), dog, { new: true });
       return updatedDog;
     } catch (error) {
       throw new Error("Error updating dog: " + error.message);

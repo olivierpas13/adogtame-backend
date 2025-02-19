@@ -61,7 +61,6 @@ app.post("/verifications", async (req, res) => {
       },
     });
 
-    console.log(transporter);
 
 
     // Email content
