@@ -28,6 +28,14 @@ const userSchema = new mongoose.Schema(
     bio: {
         type: String
     },
+    favorites:
+    {
+        type: [Object]
+    },
+    sponsored:
+    {
+        type: [Object]
+    },
   },
   {
     timestamps: true,
