@@ -14,6 +14,10 @@ class UserService {
   async getRescuers() {
     return await userRepository.getRescuers();
   }
+
+  async getShelters() {
+    return await userRepository.getShelters();
+  }
 }
 
 module.exports = new UserService();

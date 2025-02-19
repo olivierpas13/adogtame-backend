@@ -10,4 +10,6 @@ router.patch('/toggle-favorite/:id', userController.toggleFavorite);
 
 router.get("/rescuers/get-all", userController.getRescuers);
 
+router.get("/shelters/get-all", userController.getShelters);
+
 module.exports = router;

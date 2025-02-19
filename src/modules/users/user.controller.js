@@ -33,7 +33,15 @@ class UserController {
       res.status(500).json({ error: error.message });
     }
   }
-}
 
+  async getShelters(req, res) {
+    try {
+      const shelters = await userService.getShelters();
+      res.json(shelters);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+}
 
 module.exports = new UserController();

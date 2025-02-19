@@ -88,5 +88,14 @@ class UserRepository {
       throw new Error("Error fetching rescuers: " + error.message);
     }
   }
+
+  async getShelters() {
+    try {
+      const shelters = await User.find({ type: "shelter" });
+      return shelters;
+    } catch (error) {
+      throw new Error("Error fetching shelters: " + error.message);
+    }
+  }
 }
 module.exports = new UserRepository();
