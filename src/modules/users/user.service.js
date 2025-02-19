@@ -1,4 +1,4 @@
-const userRepository = require('./user.repository');
+const userRepository = require("./user.repository");
 
 class UserService {
   async getUserById(id) {
@@ -9,6 +9,10 @@ class UserService {
   }
   async toggleFavoriteDog(userId, dog) {
     return await userRepository.toggleFavoriteDog(userId, dog);
+  }
+
+  async getRescuers() {
+    return await userRepository.getRescuers();
   }
 }
 

@@ -6,35 +6,38 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      default: "user",
+      enum: ["user", "rescuer", "shelter"],
+    },
     image: {
       type: String,
       required: true,
     },
     email: {
-        type: String
+      type: String,
     },
-    dogs:{
-        type: [Object]
+    dogs: {
+      type: [Object],
     },
     emailVerified: {
-        type: Boolean
+      type: Boolean,
     },
     phone: {
-        type: String
+      type: String,
     },
     location: {
-        type: String
+      type: String,
     },
     bio: {
-        type: String
+      type: String,
     },
-    favorites:
-    {
-        type: [Object]
+    favorites: {
+      type: [Object],
     },
-    sponsored:
-    {
-        type: [Object]
+    sponsored: {
+      type: [Object],
     },
   },
   {

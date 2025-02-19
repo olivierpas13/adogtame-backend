@@ -8,4 +8,6 @@ router.put('/edit/:id', userController.editUser);
 
 router.patch('/toggle-favorite/:id', userController.toggleFavorite);
 
+router.get("/rescuers/get-all", userController.getRescuers);
+
 module.exports = router;

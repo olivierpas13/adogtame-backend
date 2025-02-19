@@ -79,5 +79,14 @@ class UserRepository {
       throw new Error(`Error toggling favorite dog: ${error.message}`);
     }
   }
+
+  async getRescuers() {
+    try {
+      const rescuers = await User.find({ type: "rescuer" });
+      return rescuers;
+    } catch (error) {
+      throw new Error("Error fetching rescuers: " + error.message);
+    }
+  }
 }
 module.exports = new UserRepository();

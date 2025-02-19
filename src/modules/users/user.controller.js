@@ -19,9 +19,16 @@ class UserController {
   }
   async toggleFavorite(req, res) {
     try {
-      console.log(req.body);
       const user = await userService.toggleFavoriteDog(req.params.id, req.body);
       res.json(user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+  async getRescuers(req, res) {
+    try {
+      const rescuers = await userService.getRescuers();
+      res.json(rescuers);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
