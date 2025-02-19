@@ -9,6 +9,14 @@ class UserController {
       res.status(500).json({ error: error.message });
     }
   }
+  async editUser(req, res) {
+    try {
+      const user = await userService.editUser(req.params.id, req.body);
+      res.json(user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
 }
 
 

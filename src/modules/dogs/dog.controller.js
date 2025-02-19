@@ -11,10 +11,10 @@ class DogController {
     }
     async getDogsByOwnerId(req, res) {
         try {
-            const dogs = await dogService.getDogsByOwnerId(req.params.ownerId);
-            if (!dogs || dogs.length === 0) {
-                return res.status(404).json({ message: 'No dogs found for this owner' });
-            }
+            const dogs = await dogService.getDogsByOwnerId(req.params.id);
+            // if (!dogs || dogs.length === 0) {
+            //     return res.status(404).json({ message: 'No dogs found for this owner' });
+            // }
             res.status(200).json(dogs);
         } catch (error) {
             res.status(500).json({ message: error.message });

@@ -5,8 +5,8 @@ class DogService {
     return await dogRepository.getAllDogs();
   }
 
-  async getAllDogsByOwnerId(ownerId) {
-    return await dogRepository.find({ ownerId });
+  async getDogsByOwnerId(id) {
+    return await dogRepository.getDogByOwnerId(id);
   }
 
   async getDogById(id) {

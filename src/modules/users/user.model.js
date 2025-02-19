@@ -19,6 +19,15 @@ const userSchema = new mongoose.Schema(
     emailVerified: {
         type: Boolean
     },
+    phone: {
+        type: String
+    },
+    location: {
+        type: String
+    },
+    bio: {
+        type: String
+    },
   },
   {
     timestamps: true,

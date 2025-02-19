@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', dogController.getAllDogs);
 
 // Get all dogs of a specific user
-router.get('/user/:userId', dogController.getDogsByOwnerId);
+router.get('/user/:id', dogController.getDogsByOwnerId);
 
 // Get a single dog by ID
 router.get('/:id', dogController.getDogById);

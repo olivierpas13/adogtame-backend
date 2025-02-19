@@ -13,9 +13,9 @@ class DogRepository {
       throw new Error("Error fetching dogs: " + error.message);
     }
   }
-  async getDogByOwnerId(ownerId) {
+  async getDogByOwnerId(id) {
     try {
-      const dogs = await Dog.find({ owner: ownerId });
+      const dogs = await Dog.find({ "owner.userId": id });
       return dogs;
     } catch (error) {
       throw new Error("Error fetching dogs by owner ID: " + error.message);
